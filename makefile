@@ -4,7 +4,11 @@ build:
 
 # Run the main morse converter program:
 run:
-	./morseConverter
+	./morseConverter --no-run
+
+# Run tests:
+test:
+	./morseConverter 
 
 # Remove used morse converter files:
 clean:

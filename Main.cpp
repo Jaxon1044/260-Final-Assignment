@@ -18,7 +18,7 @@
 */
 
 // Include definition and header file for doctest:
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#define DOCTEST_CONFIG_IMPLEMENT
 #include "doctest.h"
 
 #include "header.h"
@@ -27,6 +27,18 @@
 
 //int main(void) {
 int main( int argc, char *argv[] ) {
+
+	// ========== Adjust Testing Configs ==========
+	
+	doctest::Context context;
+
+	context.setOption("success", true);     // Report successful tests
+
+	context.applyCommandLine(argc, argv);
+
+	int testResults = context.run();              // run test cases unless with --no-run
+
+	// ============================================
 
 	ifstream inFile;
 	ofstream outFile;
@@ -118,7 +130,12 @@ int main( int argc, char *argv[] ) {
 	
 	cout << "Done! Your source file has been converted! Thank you for stopping by!" << endl; //Program is finished.
 
-	return 0;
+	//return context.run();
+	return testResults;
 }
 
+TEST_CASE("First_Test") {
+	cout << "Running tests...";
+	CHECK( 4 == 3 );
+}
 

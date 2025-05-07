@@ -17,6 +17,7 @@
 					I have attempted the 3-file bonus formatting.
 */
 
+#include "doctest.h"
 #include "header.h"
 
 
