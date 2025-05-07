@@ -17,6 +17,9 @@
 					I have attempted the 3-file bonus formatting.
 */
 
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+
+#include "doctest.h"
 #include "header.h"
 
 //MAIN FUNCTION:
