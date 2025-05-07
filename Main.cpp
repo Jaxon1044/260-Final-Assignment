@@ -136,6 +136,22 @@ int main( int argc, char *argv[] ) {
 
 TEST_CASE("First_Test") {
 	cout << "Running tests...";
-	CHECK( 4 == 3 );
+	
+	ifstream inFile;
+	inFile.open( "/testFiles/test1.txt" );
+	string str;
+	while ( getline(inFile, str)){
+		cout << str << endl;
+	}
+
+	SUBCASE( "First basic test") {
+		CHECK( "bob" == "bob" );
+	}
+	
+	SUBCASE( "Testing file comparison") {
+		string bobStr = "bob";
+		CHECK( bobStr == str );
+	}
+	
 }
 

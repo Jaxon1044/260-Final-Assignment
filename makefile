@@ -2,7 +2,7 @@
 build:
 	g++ -o morseConverter Main.cpp FunctionDefinitions.cpp
 
-# Run the main morse converter program:
+# Run the main morse converter program WITHOUT TESTS:
 run:
 	./morseConverter --no-run
 
