@@ -15,6 +15,7 @@ lint:
 
 # Build the program on a docker image:
 build-docker:
+	docker build -t encrypter:latest .
 
 # Run the docker image:
 run-docker:
