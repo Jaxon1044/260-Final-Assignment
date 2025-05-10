@@ -23,6 +23,7 @@
 #include <iostream>
 #include <fstream> //For getting input/output file variables.
 #include <string>
+#include <string.h> // For running basis file string comparisons.
 #include <cctype> //For manipulating characters. (  toupper() function for lowercase letters. ).
 #include <sstream> //For istringstream variables.
 #include <cctype> //for changing capitalization.
@@ -43,6 +44,7 @@ void convertMorse(ifstream& inFile, ofstream& outFile, string morseStrings[], in
 
 void closeIOFiles(ifstream& inFile, ofstream& outFile);
 
+bool compareFiles( string file1, string file2 );
 
 
 

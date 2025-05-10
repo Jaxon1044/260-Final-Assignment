@@ -356,6 +356,35 @@ void closeIOFiles(ifstream& inFile, ofstream& outFile) {
 	return;
 }
 
+// Test function
+
+bool compareFiles( string file1, string file2 ) {
+
+	// Open the files being compared:
+	ifstream inFile1;
+	ifstream inFile2;
+	inFile1.open( file1 );
+	inFile2.open( file2 );
+
+	char string1[256], string2[256];
+	int j = 0;
+	while(!inFile1.eof())
+	{
+		inFile1.getline(string1,256);
+		inFile2.getline(string2,256);
+		j++;
+		if(strcmp(string1,string2) != 0)
+		{
+			cout << j << "-the strings are not equal" << "\n";
+			cout << "   " << string1 << "\n";
+			cout << "   " << string2 << "\n";
+			return false;
+		}
+	}
+	
+	return true;
+}
+
 
 
 

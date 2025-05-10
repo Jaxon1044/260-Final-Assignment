@@ -135,23 +135,42 @@ int main( int argc, char *argv[] ) {
 }
 
 TEST_CASE("First_Test") {
+
+
+
 	cout << "Running tests...";
 	
 	ifstream inFile;
+	ofstream outFile;
 	inFile.open( "/testFiles/test1.txt" );
-	string str;
-	while ( getline(inFile, str)){
-		cout << str << endl;
-	}
+	
 
 	SUBCASE( "First basic test") {
 		CHECK( "bob" == "bob" );
 	}
 	
-	SUBCASE( "Testing file comparison") {
-		string bobStr = "bob";
-		CHECK( bobStr == str );
-	}
 	
+	// Testing calling functions from another file.
+	/*
+	SUBCASE( "Check files opened" ) {
+		helloWhat();
+
+		string inputName = "/testFiles/test1.txt";
+		string outputName = "output.txt";
+
+		openIOFiles( inFile, outFile, inputName, outputName );
+		MESSAGE("Hello testing subcase! Here's the input file: ", inFile );
+	}
+	*/
+
+	// Testing comparing files:
+	SUBCASE( "Comparison test 1" ) {
+		CHECK( compareFiles( "english.txt", "english.txt" ) );
+	}
+
+	SUBCASE( "Comparison test 2") {
+		REQUIRE_FALSE( compareFiles( "english.txt", "morse.txt" ) );
+	}
 }
+
 
