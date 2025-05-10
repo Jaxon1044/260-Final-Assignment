@@ -1,5 +1,5 @@
-name: ENcrypty Workflow
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Encrypty Workflow
+run-name: ${{ github.actor }} is running a workflow.
 on: [push]
 jobs:
   Explore-GitHub-Actions:
@@ -11,3 +11,13 @@ jobs:
         run: |
           make build
           ls
+  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+       - name: Check out repository code
+         uses: actions/checkout@v4
+       - name: Build
+         run: |
+           make build
+           make test
