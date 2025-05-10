@@ -8,7 +8,16 @@ run:
 
 # Run tests:
 test:
-	./morseConverter 
+	./morseConverter
+
+# lint the files:
+lint:
+
+# Build the program on a docker image:
+build-docker:
+
+# Run the docker image:
+run-docker:
 
 # Remove used morse converter files:
 clean:
