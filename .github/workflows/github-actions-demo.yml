@@ -15,7 +15,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-       - if: false
        - name: Check out repository code
          uses: actions/checkout@v4
        - name: Test
