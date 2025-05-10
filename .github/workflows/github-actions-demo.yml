@@ -13,8 +13,7 @@ jobs:
           ls
   
   test:
-    runs-on: ubuntu-latest
-    timeout-minutes: 1
+    runs-on: ubuntu-lates
     steps:
        - name: Check out repository code
          uses: actions/checkout@v4
