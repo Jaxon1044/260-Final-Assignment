@@ -8,7 +8,7 @@ run:
 
 # Run tests:
 test:
-	./morseConverter
+	./morseConverter testing
 
 # lint the files:
 lint:

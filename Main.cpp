@@ -92,7 +92,10 @@ int main( int argc, char *argv[] ) {
 	int typeConversion = 0;  //Indicates what form of conversion the user has chosen.
 	int charCount = 0;
 	
-	//bool test = false;
+	// When running tests, just exit immediately:
+	if ( argv[1] == "testing" ) {
+		return testResults;
+	}
 
 
 	cout << "Welcome to Encrypty! The best encrypter and decoder worldwide!" << endl;
@@ -229,6 +232,8 @@ TEST_CASE("First_Test") {
 		// Once the file is converted, compare the outputted file to a template solution:
 		CHECK( compareFiles( "output.txt", "morse.txt" ) );
 	}
+	
+	return;
 }
 
 
